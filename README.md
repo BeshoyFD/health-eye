@@ -19,7 +19,7 @@ documentation for health eye backend server
             {
                 try{
                     IO.Options opt = new IO.Options();
-                    opt.query = "SecretKey=5sb-6v2-oc09";
+                    opt.query = "SecretKey=xxxxx";
                     socket = IO.socket("http://socketer.gotdns.ch:300",opt);
                 }catch(URISyntaxException e){
                     throw new RuntimeException(e);
