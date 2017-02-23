@@ -64,15 +64,14 @@ create a thread in background of app to send ping to server side every 30 second
         socket.emit("ping","true"); //a ping to keep user active/online on server for chat and other stuffs
         
  
+ 
 main event to send data to server side
-
 "request" is the event name , pars is the json array
 
     pars = "type":[ {  parameters array } ]
       socket.emit("request",pars);
       
 main event to receive data from server side
-
 "response" is the event name , responsed data is json array or string , depending on the results
 
     socket.on("response",handleResponse); //call a function to handle responsed data and use it in app
