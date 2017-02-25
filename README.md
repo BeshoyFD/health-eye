@@ -93,7 +93,7 @@ to receive data from server side
 
 for sign up / registration
 
->> requests 
+>> request
 
      { "sign_up": { "email" : "bishoy.eagle@yahoo.com" , "password": "broken" }}
      
@@ -114,7 +114,7 @@ once the user sign up successfully, a confirmation code/msg will send to his ema
 ****************************************************************************************************
 for sign in / login
 
->> requests 
+>> request
 
      { "sign_in": { "email" : "bishoy.eagle@yahoo.com" , "password": "broken" }}
      
