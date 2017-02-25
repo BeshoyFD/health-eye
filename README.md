@@ -78,7 +78,7 @@ create a thread in background of app to send ping to server side every 30 second
        object.put("sign_up", Values);
       socket.emit("request",Parms);
       
-you can send json object as string with one line , for example :
+you can send string as json object with one line , for example :
 
      socket.emit("request","{ \"sign_in\" : {\"email\" : \"beshoy@gmail.com\" : , \"password\" :\"unknownPW\"}}");
      
