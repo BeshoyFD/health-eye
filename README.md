@@ -120,16 +120,17 @@ for sign in / login
      
 >> response in json objects
 
-if there is a error like invalid email / invalid password or any kind of errors
+if there is a error like incorrect email , password or any kind of errors
 
     {sign_in : {error : ErrorMsg}} // ErrorMsg is the responsed error message
     
-sign up success and new inserted in database , response is
+sign in success and new inserted in database , response is
 
     {sign_in: {success: { cid: CustomerID , PhoneState : State , EmailState : State}}}
     
   CustomerID : is the customer id, PhoneState : is the state of phone confirmation , EmailState is the email confirmation
   State : if 0 = not confirmed else 1 = confirmed
+  
  
 ****************************************************************************************************
 
