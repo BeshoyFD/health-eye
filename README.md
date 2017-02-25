@@ -103,7 +103,7 @@ if there is a error like invalid email / invalid password or any kind of errors
 
     {sign_up : {error : ErrorMsg}} // ErrorMsg is the responsed error message
     
-sign up success and new inserted in database , response is
+sign up success and inserted in database , response is
 
     {sign_up: {success: { cid: CustomerID , PhoneState : 0 , EmailState : 0}}}
     
