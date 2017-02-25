@@ -129,6 +129,7 @@ sign in success and new inserted in database , response is
     {sign_in: {success: { cid: CustomerID , PhoneState : State , EmailState : State}}}
     
   CustomerID : is the customer id, PhoneState : is the state of phone confirmation , EmailState is the email confirmation
+  
   State : if 0 = not confirmed else 1 = confirmed
   
  
@@ -156,6 +157,7 @@ to confirm email address
 
     { "confirm_email": {"code": "ConfirmationCode" ,"cid": "25" }}
 cid : is the cusomter id which returned by sign up or sign in success
+
 ConfirmationCode : is the written code by USER
 
 
@@ -172,6 +174,7 @@ to confirm phone number
 
     { "confirm_phone": {"code": "ConfirmationCode" ,"cid": "25" }}
 cid : is the cusomter id which returned by sign up or sign in success
+
 ConfirmationCode : is the written code by USER
 
 
