@@ -124,7 +124,7 @@ if there is a error like incorrect email , password or any kind of errors
 
     {sign_in : {error : ErrorMsg}} // ErrorMsg is the responsed error message
     
-sign in success and new inserted in database , response is
+sign in success , response is
 
     {sign_in: {success: { cid: CustomerID , PhoneState : State , EmailState : State}}}
     
