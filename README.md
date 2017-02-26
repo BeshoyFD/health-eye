@@ -185,5 +185,79 @@ error response
 success response
 
     {confirm_phone: {success: "confirmed"}} 
-
+ ****************************************************************************************************
+ ### Update 27-2-2017
+ 
+ for sign up / registration
+ 
+ first step : email address and password , with the following request
+ 
+        { "sign_up": {"email": "bishoy.eagle@yahoo.com" ,"password": "brokenxx" }}
         
+ response if success
+ 
+     {sign_up: {success: { token_id : tokenid ,  PhoneState : 0 , EmailState : 0}}}
+
+EmailState = 0 , so forward user to confirmation email Activity(page) and send confirmation code request
+
+        { "resend_confirmation": {"type": "email" }}
+
+save token_id in app cache , if the user disconnected with internet or  lost connection with server
+
+so use the following request to stay in the confirmation email activity , so user will not write email address / passsword again
+
+        { "sign_up": {"token": "tokenid_cache" }}
+        
+you will contiune sign up using token id (to confirm email), token id expire in 1 hour
+
+error response 
+
+    {sign_up: {error: ErrorMsg , token : true}})
+    
+success response , using token id for sign up
+
+    {sign_up: {success: "true" , token : true}}
+    
+to confirm email address with code , send request
+
+        { "confirm_email": {"code": "xxx" }}
+        
+error response
+
+        {confirm_email: {error: ErrorMsg}}
+    
+if the user already signed in but the email not confirmed , you will receive EmailState 0 , so forward user to confrimation activity
+
+if he confirmed email successfully and he already logged in , so response is
+       
+       { confirm_email: { success: { confirmed: true,  EmailState: 1 }  }  })
+       
+if in sign up mode, response is
+
+    { confirm_email: { success: { cid: insertId,  PhoneState: 0,   EmailState: 1 }  }  })
+    
+in server , user will be logged in, and you will receive token id for future sign in
+
+    {token: {id: tokenid}}
+
+
+*****************************************************************************************************
+
+### sign in / login
+
+first time login
+
+        { "sign_in": {"email": "bishoy.eagle@yahoo.com" ,"password": "brokenxx" }}
+        
+response is token id , for future sign in
+
+    {token: {id: tokenid}}
+    
+sign in using token id 
+
+        { "sign_in": {"token": "id"}}
+
+
+to logout from the current device or from the other devices 
+
+        { "logout": true }
