@@ -75,7 +75,7 @@ create a thread in background of app to send ping to server side every 30 second
        JSONObject Values = new JSONObject();
        Values.put("email","bishoy.eagle@yahoo.com");
        Values.put("password","myPWD");
-       object.put("sign_up", Values);
+       Parms.put("sign_up", Values);
       socket.emit("request",Parms);
       
 you can send string as json object with one line , for example :
